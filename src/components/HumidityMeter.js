@@ -1,17 +1,17 @@
-import React from 'react';
-import Speedometer from 'react-d3-speedometer';
-import './Button.css'
+import React from "react";
+import Speedometer from "react-d3-speedometer";
+import "./Button.css";
 
 const HumidityMeter = ({ humidityLevel }) => {
   const normalizedHumidityLevel = Math.min(Math.max(humidityLevel, 0), 100);
 
   return (
-    <div className='meterContainer'>
+    <div className="meterContainer">
       <h2>Humidity Meter</h2>
       <Speedometer
         value={normalizedHumidityLevel}
         needleHeightRatio={0.4}
-        needleColor="blue" // Màu của kim
+        needleColor="blue"
         startColor="#66cc66"
         endColor="red"
         segments={5}

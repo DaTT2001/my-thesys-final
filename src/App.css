@@ -1,29 +1,27 @@
 .meter {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+@media screen and (max-width: 963px) {
+  .meter {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
   }
-  
-  /* Responsive styles for mobile */
-  @media screen and (max-width: 963px) {
-    .meter {
-      flex-direction: column; /* Hiển thị các thành phần dọc theo cột */
-      gap: 20px; /* Khoảng cách giữa các thành phần */
-      align-items: center; /* Căn giữa các thành phần */
-    }
+}
+@media screen and (max-width: 1200px) {
+  .meter {
+    gap: 50px;
   }
-  @media screen and (max-width: 1200px) {
-    .meter {
-        gap: 50px;
-    }
-  }
+}
 
 .main-header {
-    text-align: center;
-    margin-bottom: 100px;
+  text-align: center;
+  margin-bottom: 100px;
 }
 .light-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }

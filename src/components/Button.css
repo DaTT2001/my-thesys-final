@@ -1,30 +1,20 @@
-/* .buttonContainer {
-    width: 100px;
-    height: 100px;
-    background-color: #303136;
-    border-radius: 5px;
-    box-shadow: 0 0 10px 0 #0000004d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 .meterContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .meterContainer div {
-    display: flex;
+  display: flex;
 }
 @media screen and (max-width: 963px) {
-    .meter {
-      flex-direction: column; /* Hiển thị các thành phần dọc theo cột */
-      gap: 20px; /* Khoảng cách giữa các thành phần */
-      align-items: center; /* Căn giữa các thành phần */
-    }
-    .buttonContainer {
-        width: 60px;
-        height: 60px;
-    }
+  .meter {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .buttonContainer {
+    width: 60px;
+    height: 60px;
+  }
 }

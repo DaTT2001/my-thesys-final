@@ -1,17 +1,17 @@
-import React from 'react';
-import Speedometer from 'react-d3-speedometer';
-import './Button.css'
+import React from "react";
+import Speedometer from "react-d3-speedometer";
+import "./Button.css";
 
 const GasMeter = ({ gasLevel }) => {
   const normalizedGasLevel = Math.min(Math.max(gasLevel, 0), 255);
 
   return (
-    <div className='meterContainer'>
+    <div className="meterContainer">
       <h3>Gas Meter</h3>
       <Speedometer
         value={normalizedGasLevel}
         needleHeightRatio={0.4}
-        needleColor="orange" // Màu của kim
+        needleColor="orange"
         startColor="#66cc66"
         endColor="red"
         segments={5}
