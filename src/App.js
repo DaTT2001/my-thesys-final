@@ -11,6 +11,8 @@ function App() {
   const [temp, setTemp] = useState(0);
   const [humi, setHumi] = useState(0);
   const [gas, setGas] = useState(0);
+  const [data, setData] = useState([]);
+  // sync dữ liệu từ cổng ảo v1 : nhiệt độ
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -42,7 +44,6 @@ function App() {
     const intervalId = setInterval(() => {
       fetchData();
     }, 1000);
-
     return () => clearInterval(intervalId);
   }, []);
   useEffect(() => {
@@ -65,6 +66,32 @@ function App() {
 
     return () => clearInterval(intervalId);
   }, []);
+  // update data lên Firebase mỗi khi có giá trị thay đổi
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post("https://thesys-40f9d-default-rtdb.asia-southeast1.firebasedatabase.app/test.json", {humi: humi, gas: gas, temp: temp}
+        );
+        console.log(response)
+      } catch (error) {
+        console.error("Error fetching data:", error)
+      }
+    }
+    fetchData();
+  },[humi, gas, temp])
+  // lấy data về 
+  useEffect(() => {
+    axios.get("https://thesys-40f9d-default-rtdb.asia-southeast1.firebasedatabase.app/test.json")
+      .then(response => {
+        const dataArr = Object.values(response.data)
+        setData(dataArr)
+        console.log('Data received:', dataArr);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
 
   const handleNotificationClick = () => {
     if ("Notification" in window) {
