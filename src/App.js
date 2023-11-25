@@ -30,6 +30,7 @@ function App() {
 
     return () => clearInterval(intervalId);
   }, []);
+  // sync du lieu tu cong ao v2 do am
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -46,6 +47,7 @@ function App() {
     }, 1000);
     return () => clearInterval(intervalId);
   }, []);
+  // sync du lieu tu cong ao v3: khi gas
   useEffect(() => {
     const fetchData = async () => {
       try {
